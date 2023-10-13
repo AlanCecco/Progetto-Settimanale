@@ -37,15 +37,22 @@ console.log(me);
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
+me.skills = ["JavaScript", "Python", "HTML", "CSS"];
 
+console.log(myObject);
 /* ESERCIZIO F
   Crea un pezzo di codice per aggiungere un nuovo elemento all'array "skills" contenuto nell'oggetto "me".
 */
+const newSkill = "React";
+me.skills.push(newSkill);
 
+console.log(me);
 /* ESERCIZIO G
   Crea un pezzo di codice per rimuovere programmaticamente l'ultimo elemento dall'array "skills" contenuto nell'oggetto "me".
 */
+me.skills.pop();
 
+console.log(me);
 // Funzioni
 
 /* ESERCIZIO 1
@@ -204,9 +211,16 @@ if (isBirthday) {
   Scrivi una funzione chiamata "newestMovie" che trova il film più recente nell'array "movies" fornito.
 */
 
+
+
 /* ESERCIZIO 13
   Scrivi una funzione chiamata countMovies che ritorna il numero di film contenuti nell'array "movies" fornito.
 */
+function countMovies (movies){
+  return movies.length
+}
+const numeromovies = countMovies(movies)
+console.log(numeromovies);
 
 /* ESERCIZIO 14
   Scrivi una funzione chiamata "onlyTheYears" che crea un array con solamente gli anni di uscita dei film contenuti nell'array "movies" fornito.
