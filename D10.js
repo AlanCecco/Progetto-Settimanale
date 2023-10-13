@@ -145,10 +145,51 @@ console.log("Oggi è", dayOfWeek);
 /* ESERCIZIO 9
   Scrivi una funzione chiamata "howManyDays" che riceve una data come parametro e ritorna il numero di giorni trascorsi da tale data.
 */
+function howManyDays(startDate) {
+  const currentDate = new Date(); 
+  const timeDifference = currentDate - startDate; 
+  const daysDifference = Math.floor(timeDifference / (1000 * 60 * 60 * 24)); 
+
+  return daysDifference;
+}
+
+
+const startDate = new Date('2023-09-10'); 
+const daysPassed = howManyDays(startDate);
+
+console.log(`Sono passati ${daysPassed} giorni dalla data specificata.`);
 
 /* ESERCIZIO 10
   Scrivi una funzione chiamata "isTodayMyBirthday" che deve ritornare true se oggi è il tuo compleanno, falso negli altri casi.
 */
+
+function isTodayMyBirthday(birthday) {
+  const today = new Date();
+  const day = today.getDate();
+  const month = today.getMonth() + 1; 
+ 
+  const birthdayDay = birthday.getDate();
+  const birthdayMonth = birthday.getMonth() + 1;
+
+  
+  return day === birthdayDay && month === birthdayMonth;
+}
+
+
+const myBirthday = new Date('2003-10-09'); 
+const isBirthday = isTodayMyBirthday(myBirthday);
+
+if (isBirthday) {
+  console.log("Buon compleanno!");
+} else {
+  console.log("Oggi non è il tuo compleanno.");
+}
+
+
+
+
+
+
 
 // Arrays & Oggetti
 
