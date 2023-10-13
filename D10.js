@@ -11,19 +11,29 @@ REGOLE
 /* ESERCIZIO A
   Crea una variabile chiamata "sum" e assegnaci il risultato della somma tra i valori 10 e 20.
 */
-
+let sum = 10 + 20
+console.log(sum);
 /* ESERCIZIO B
   Crea una variabile chiamata "random" e assegnaci un numero casuale tra 0 e 20 (deve essere generato dinamicamente a ogni esecuzione).
 */
+var random = Math.floor(Math.random()*21);
+console.log(random);
 
 /* ESERCIZIO C
   Crea una variabile chiamata "me" e assegnaci un oggetto contenente le seguenti proprietà: name = il tuo nome, surname = il tuo cognome, age = la tua età.
 */
+let me ={
+  name:"Alan",
+  surname:"Cecconelllo",
+  Age:"20"
+}
+console.log(me);
 
 /* ESERCIZIO D
   Crea del codice per rimuovere programmaticamente la proprietà "age" dall'oggetto precedentemente creato.
 */
-
+delete me.Age
+console.log(me);
 /* ESERCIZIO E
   Crea del codice per aggiungere programmaticamente all'oggetto precedentemente creato un array chiamato "skills", contenente i linguaggi di programmazione che conosci.
 */
@@ -45,23 +55,63 @@ REGOLE
 /* ESERCIZIO 2
   Crea una funzione chiamata "whoIsBigger" che riceve due numeri come parametri e ritorna il maggiore dei due.
 */
+let numero1 = 12
+let numero2=13
+function whoisBigger(numero1,numero2) {
+  if (numero1 > numero2) {
+    return numero1;
+  }
+   else if (numero2 > numero1) {
+    return numero2;
+  } 
+  else {
+    return "i numeri sono uguali";
+  }
+}
 
 /* ESERCIZIO 3
   Crea una funzione chiamata "splitMe" che riceve una stringa come parametro e ritorna un'array contenente ogni parola della stringa.
 
   Es.: splitMe("I love coding") => ritorna ["I", "Love", "Coding"]
 */
-
+const a = "I Love Pizza"
+const risultato =  splitMe (a)
+function splitMe (a){
+  var wordsArray = a.split('');
+  return wordsArray;
+}
+console.log(risultato);
 /* ESERCIZIO 4
   Crea una funzione chiamata "deleteOne" che riceve una stringa e un booleano come parametri.
   Se il valore booleano è true la funzione deve ritornare la stringa senza il primo carattere, altrimenti la deve ritornare senza l'ultimo.
 */
+let string ="Hello"
+
+function deleteOne(string){
+if (first=true) {
+  return string[1]
+  
+} else {
+  return string[-1]  
+}
+}
+console.log(deleteOne);
 
 /* ESERCIZIO 5
   Crea una funzione chiamata "onlyLetters" che riceve una stringa come parametro e la ritorna eliminando tutte le cifre numeriche.
 
   Es.: onlyLetters("I have 4 dogs") => ritorna "I have dogs"
 */
+function onlyLetters(inputString) {
+   const result = inputString.replace(/\d/g, '');
+  return result;
+}
+
+const stringa = "Ciao Ho 18 Anni";
+const senzaCifre = onlyLetters(stringa);
+
+console.log(senzaCifre);
+  
 
 /* ESERCIZIO 6
   Crea una funzione chiamata "isThisAnEmail" che riceve una stringa come parametro e ritorna true se la stringa è un valido indirizzo email.
@@ -70,7 +120,15 @@ REGOLE
 /* ESERCIZIO 7
   Scrivi una funzione chiamata "whatDayIsIt" che ritorna il giorno della settimana corrente.
 */
-
+function whatDayIsIt() {
+  const daysOfWeek = ["Domenica", "Lunedì", "Martedì", "Mercoledì", "Giovedì", "Venerdì", "Sabato"];
+  const today = new Date();
+  const dayOfWeek = daysOfWeek[today.getDay()];
+  
+  return dayOfWeek;
+}
+const dayOfWeek = whatDayIsIt();
+console.log("Oggi è", dayOfWeek);
 /* ESERCIZIO 8
   Scrivi una funzione chiamata "rollTheDices" che riceve un numero come parametro.
   Deve invocare la precedente funzione dice() il numero di volte specificato nel parametro, e deve tornare un oggetto contenente una proprietà "sum":
